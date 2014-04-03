@@ -28,6 +28,7 @@ void menu()
             pol2Orth(point);
             showOrth(point);
             delete point;
+            point=0;
         }
         if(!strcmp(respond, "2"))
         {
@@ -38,6 +39,7 @@ void menu()
             orth2Pol(point);
             showPol(point);
             delete point;
+            point=0;
         }
         if(!strcmp(respond, "3"))
         {
@@ -51,7 +53,9 @@ void menu()
             pol2Orth(b);
             cout<<"Sum = ",showPol(orth2Pol(sum(*a,*b)))<<endl;
             delete a;
+            a=0;
             delete b;
+            b=0;
         }
         if(!strcmp(respond, "4"))
         {
@@ -65,7 +69,9 @@ void menu()
             pol2Orth(b);
             cout<<"Subtraction = ",showPol(orth2Pol(subtraction(*a,*b)))<<endl;
             delete a;
+            a=0;
             delete b;
+            b=0;
         }
         if(!strcmp(respond, "5"))
         {
@@ -77,7 +83,9 @@ void menu()
             enterOrth(b);
             cout<<"Sum = ",showOrth(sum(*a,*b))<<endl;
             delete a;
+            a=0;
             delete b;
+            b=0;
         }
         if(!strcmp(respond, "6"))
         {
@@ -89,7 +97,9 @@ void menu()
             enterOrth(b);
             cout<<"Subtraction = ",showOrth(subtraction(*a,*b))<<endl;
             delete a;
+            a=0;
             delete b;
+            b=0;
         }
 
         printf("More menu? (y/n)\n", respond);
