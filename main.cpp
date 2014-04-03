@@ -16,9 +16,6 @@ void menu()
     while(res[0] == 'y')
     {
         char respond[256];
-        char respond1[256];
-        char respond2[256];
-        char respond3[256];
         printf("What to do?\n 1: transform into orthogonal coordinates\n 2: transform into polar coordinates\n Operations with polar coordinates:\n 3: sum up\n 4: subtract\n Operations with orthogonal coordinates:\n 5: sum up\n 6: subtract\n");
         scanf("%s", &respond);
 
@@ -30,8 +27,7 @@ void menu()
             enterPol(point);
             pol2Orth(point);
             showOrth(point);
-            delete[] point;
-            point=0;
+            delete point;
         }
         if(!strcmp(respond, "2"))
         {
@@ -41,8 +37,7 @@ void menu()
             enterOrth(point);
             orth2Pol(point);
             showPol(point);
-            delete[] point;
-            point=0;
+            delete point;
         }
         if(!strcmp(respond, "3"))
         {
@@ -55,10 +50,8 @@ void menu()
             enterPol(b);
             pol2Orth(b);
             cout<<"Sum = ",showPol(orth2Pol(sum(*a,*b)))<<endl;
-            delete[] a;
-            a=0;
-            delete[] b;
-            b=0;
+            delete a;
+            delete b;
         }
         if(!strcmp(respond, "4"))
         {
@@ -71,10 +64,8 @@ void menu()
             enterPol(b);
             pol2Orth(b);
             cout<<"Subtraction = ",showPol(orth2Pol(subtraction(*a,*b)))<<endl;
-            delete[] a;
-            a=0;
-            delete[] b;
-            b=0;
+            delete a;
+            delete b;
         }
         if(!strcmp(respond, "5"))
         {
@@ -85,10 +76,8 @@ void menu()
             cout<<"Enter the second point"<<endl;
             enterOrth(b);
             cout<<"Sum = ",showOrth(sum(*a,*b))<<endl;
-            delete[] a;
-            a=0;
-            delete[] b;
-            b=0;
+            delete a;
+            delete b;
         }
         if(!strcmp(respond, "6"))
         {
@@ -99,10 +88,8 @@ void menu()
             cout<<"Enter the second point"<<endl;
             enterOrth(b);
             cout<<"Subtraction = ",showOrth(subtraction(*a,*b))<<endl;
-            delete[] a;
-            a=0;
-            delete[] b;
-            b=0;
+            delete a;
+            delete b;
         }
 
         printf("More menu? (y/n)\n", respond);
